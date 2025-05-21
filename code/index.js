@@ -1,1 +1,2 @@
-console.log("Hello! I run when the page loads!");
+import WeatherManager from "./weatherManager.js";
+WeatherManager.initialize();
