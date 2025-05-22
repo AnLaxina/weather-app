@@ -21,6 +21,20 @@ export default class WeatherManager {
         }
     }
 
+    static getCurrentConditions() {
+        return {
+            temp: this.data.currentConditions.temp,
+            feelsLike: this.data.currentConditions.feelslike,
+            humidity: this.data.currentConditions.humidity,
+            wind: {
+                speed: this.data.currentConditions.windspeed,
+                dir: this.data.currentConditions.winddir
+            },
+            icon: this.data.currentConditions.icon,
+            condition: this.data.currentConditions.conditions
+        }
+    }
+
     static printInformation(particularInfo) {
         for(const [key, value] of Object.entries(particularInfo)) {
             console.log(`${key}: ${value}`);
