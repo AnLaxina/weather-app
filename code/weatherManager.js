@@ -1,14 +1,16 @@
 import APIManager from "./apiManager.js";
 
 export default class WeatherManager {
+   
+    static data;
+
     // API Key: NJ5X7VJZ62AWQLWL5WCRJK7GV
-    static initialize() {
+    static async initialize(location) {
         // For now, let's just test out the API and see if everything is working.
-        console.log("Hello! I'm in the weather manager class");
+        this.data = await APIManager.getWeatherInformation(location)
     }
 
-    static async displayWeatherData(location) {
-        const weatherData = await APIManager.getWeatherInformation(location);
-        console.log(weatherData);
+    static logWeatherData() {
+        console.log(this.data);
     }
 }
