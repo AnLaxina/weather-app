@@ -13,4 +13,17 @@ export default class WeatherManager {
     static logWeatherData() {
         console.log(this.data);
     }
+
+    static getLocationInfo() {
+        return {
+            address: this.data.address,
+            timezone: this.data.timezone
+        }
+    }
+
+    static printInformation(particularInfo) {
+        for(const [key, value] of Object.entries(particularInfo)) {
+            console.log(`${key}: ${value}`);
+        }
+    }
 }
