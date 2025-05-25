@@ -42,6 +42,13 @@ export default class WeatherManager {
         }
     }
 
+    // This function may be optional, usually.... alerts are kinda..... rare?
+    static getAlerts() {
+        return {
+            alerts: this.data.alerts.length > 1 ? this.data.alerts : "No alerts right now!"
+        }
+    }
+
     static printInformation(particularInfo) {
         for(const [key, value] of Object.entries(particularInfo)) {
             console.log(`${key}: ${value}`);
