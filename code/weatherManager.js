@@ -14,6 +14,17 @@ export default class WeatherManager {
         console.log(this.data);
     }
 
+    // This function retrieves the information from the API that I think is needed
+    // these are all made up of "get {x}" functions for modularity
+    static getWeatherData() {
+        return {
+            locationInfo: this.getLocationInfo(),
+            currentConditions: this.getCurrentConditions(),
+            forecast: this.getForecast(),
+            alerts: this.getAlerts()
+        }
+    }
+
     static getLocationInfo() {
         return {
             address: this.data.address,
