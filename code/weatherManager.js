@@ -35,6 +35,13 @@ export default class WeatherManager {
         }
     }
 
+    static getForecast() {
+        return {
+            precip: this.data.currentConditions.precip,
+            precipProb: this.data.currentConditions.precipprob
+        }
+    }
+
     static printInformation(particularInfo) {
         for(const [key, value] of Object.entries(particularInfo)) {
             console.log(`${key}: ${value}`);
