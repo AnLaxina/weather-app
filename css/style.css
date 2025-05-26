@@ -1,25 +1,33 @@
 /* See colour_scheme.txt for the colour palette */
 * {
     font-family: "Pretendard", monospace;
-    color: #3b3b3b;
-    background-color: #f2bfbf;
 }
 
 header, main, footer {
     padding: 14px;
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    color: #3b3b3b;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2bfbf;
+}
+
 
 main {
     background-color: #7c5d87;
     min-width: 30%;
+    color: #f2bfbf;
     border: 8px solid #b88ab2;
     border-radius: 15px;
 }
 
-body {
-    min-height: 100vh;
+footer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    background-color: #40648b;
+    min-width: 100vw;
 }
