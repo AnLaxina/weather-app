@@ -1,3 +1,14 @@
+/*
+Colour Scheme:
+Primary Background	#f2bfbf	Use this as the main page background — it's soft and warm, like a cozy blanket.
+Header / Navbar	#40648b	Strong and cool — use this for top navigation bar, logo background, or footer to ground the layout.
+Accent Sections	#7c5d87	Use for weather cards, sidebars, or alternating section backgrounds. Adds personality without overwhelming.
+Highlight / Button	#ff8383	Great for calls to action like buttons ("Refresh", "Get Forecast") or for active states (selected tabs, toggle highlights, etc.)
+Secondary Accent	#b88ab2	Use for icon backgrounds, hover states, or subtle borders around cards — ties everything together with a gentle pastel pop.
+Text (Main)	#3B3B3B	
+ */
 * {
     font-family: "Pretendard", monospace;
+    color: #3b3b3b;
+    background-color: #f2bfbf;
 }
