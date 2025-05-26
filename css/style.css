@@ -18,6 +18,10 @@ body {
 
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
     background-color: #7c5d87;
     min-width: 30%;
     color: #f2bfbf;
@@ -30,4 +34,32 @@ footer {
     justify-content: center;
     background-color: #40648b;
     min-width: 100vw;
+}
+
+/* Weather Card Styling */
+.current-weather, .weather-information {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.weather-information {
+    align-items: center;
+}
+
+#weather {
+    display: flex;
+}
+
+.location-info, .humidity-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* This right here is for the 7-day forecast container */
+.day-forecast {
+    background-color: #b88ab2;
+    border-radius: 15px;
+    padding: 8px;
 }
