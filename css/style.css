@@ -84,3 +84,9 @@ footer {
 #forecast-title {
     font-size: 1.2rem;
 }
+
+
+#weather-icon {
+    width: 84px;
+    height: 84px;
+}
