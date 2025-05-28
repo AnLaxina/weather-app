@@ -7,3 +7,5 @@ await DOMManager.initialize();
 
 WeatherManager.logWeatherData();
 console.log(`Today's date is ${DateManager.getDateToday()}`);
+console.log(`And the day today is: ${DateManager.getDayOfWeek()}`);
+console.log(`The current time is: ${DateManager.getCurrentTime()}`);

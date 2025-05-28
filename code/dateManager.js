@@ -4,4 +4,12 @@ export default class DateManager {
     static getDateToday() {
         return format(new Date(), "MMMM d, y");
     }
+
+    static getDayOfWeek() {
+        return format(new Date(), "EEEE");
+    }
+
+    static getCurrentTime() {
+        return format(new Date(), "h:mm a");
+    }
 }
