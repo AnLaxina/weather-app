@@ -56,6 +56,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-size: 1.2rem;
 }
 
 /* This right here is for the 7-day forecast container */
@@ -78,4 +79,8 @@ footer {
     height: 200px;
     flex-shrink: 0; 
     border-radius: 10px;
+}
+
+#forecast-title {
+    font-size: 1.2rem;
 }
