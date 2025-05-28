@@ -63,6 +63,23 @@
     <footer>
         <p>2025 AnLaxina</p>
     </footer>
+    <!-- Modal/Pop-up for entering location -->
+    <dialog id="location-popup">
+        <form action="#" method="post">
+            <label for="city-name">City Name: </label>
+            <input type="text" placeholder="ex. Vancouver, BC" required>
+            <h3>Units of Measurement</h3>
+            <input type="radio" id="metric" value="metric" name="unit">
+            <label for="metric">Metric</label>
+            <input type="radio" id="imperial" value="imperial" name="unit">
+            <label for="imperial">Imperial</label>
+            <div class="popup-buttons">
+                <button type="button">Done</button>
+                <button type="button">Use Current Location</button>
+            </div>
+
+        </form>
+    </dialog>
 </body>
 
 </html>
