@@ -12,4 +12,9 @@ export default class DateManager {
     static getCurrentTime() {
         return format(new Date(), "h:mm a");
     }
+
+    static updateTime() {
+        const time = document.getElementById("time");
+        time.textContent = DateManager.getCurrentTime();
+    }
 }
