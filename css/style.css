@@ -79,14 +79,19 @@ footer {
 
 .day-of-week {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     background-color: #7c5d87;
     min-width: 150px;
     height: 200px;
     flex-shrink: 0;
     border: solid 5px #f2bfbf;
     border-radius: 10px;
+}
+
+.day-of-week p {
+    font-size: 1.1rem;
 }
 
 #forecast-title {

@@ -6,4 +6,3 @@ await WeatherManager.initialize("Maple Ridge, BC");
 await DOMManager.initialize();
 
 WeatherManager.logWeatherData();
-WeatherManager.printInformation(WeatherManager.getCurrentConditions());
