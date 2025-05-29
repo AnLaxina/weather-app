@@ -60,6 +60,15 @@ export default class WeatherManager {
         }
     }
 
+    static getWeekForecast() {
+        const daysOfWeek = {};
+        for(let i = 1; i <= 7; i++) {
+            const neededInformation = [this.data.days[i].datetime, this.data.days[i].temp, this.data.days[i].icon];
+            daysOfWeek[i] = neededInformation;
+        }
+        return daysOfWeek;
+    }
+
     static printInformation(particularInfo) {
         for(const [key, value] of Object.entries(particularInfo)) {
             console.log(`${key}: ${value}`);
