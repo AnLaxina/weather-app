@@ -7,7 +7,3 @@ await DOMManager.initialize();
 
 WeatherManager.logWeatherData();
 WeatherManager.printInformation(WeatherManager.getCurrentConditions());
-
-// For testing the popup
-const popup = document.querySelector("dialog");
-popup.showModal();

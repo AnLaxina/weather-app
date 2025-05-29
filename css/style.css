@@ -56,7 +56,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.location-info {
     font-size: 1.2rem;
+}
+
+.humidity-information {
+    font-size: 1.1rem;
 }
 
 /* This right here is for the 7-day forecast container */
@@ -77,7 +84,8 @@ footer {
     background-color: #7c5d87;
     min-width: 150px;
     height: 200px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    border: solid 5px #f2bfbf;
     border-radius: 10px;
 }
 
@@ -85,8 +93,17 @@ footer {
     font-size: 1.2rem;
 }
 
-
+/* For the weather conditions section */
 #weather-icon {
     width: 84px;
     height: 84px;
+}
+
+#condition {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.weather-alert {
+    font-size: 1.2rem;
 }

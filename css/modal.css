@@ -1,0 +1,7 @@
+/* This is for the pop-up window that displays before everything else is loaded in */
+#location-popup:open {
+    display: flex;
+    background-color: #7c5d87;
+    border-radius: 15px;
+    border: #b88ab2 solid 5px;
+}
