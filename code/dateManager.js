@@ -5,8 +5,8 @@ export default class DateManager {
         return format(new Date(), "MMMM d, y");
     }
 
-    static getDayOfWeek() {
-        return format(new Date(), "EEEE");
+    static getDayOfWeek(date = new Date()) {
+        return format(date, "EEEE");
     }
 
     static getCurrentTime() {
