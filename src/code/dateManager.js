@@ -1,17 +1,25 @@
-import {format} from "date-fns";
-import { toZonedTime } from "date-fns-tz";
+import { formatInTimeZone } from "date-fns-tz";
+import WeatherManager from "./weatherManager.js";
 
 export default class DateManager {
     static getDateToday() {
-        return format(new Date(), "MMMM d, y");
+        const timezone = WeatherManager.getLocationInfo().timezone;
+        return formatInTimeZone(new Date(), timezone, "MMMM d, y");
+    }
+
+    static getDate(date) {
+        const timezone = WeatherManager.getLocationInfo().timezone;
+        return formatInTimeZone(date, timezone, "MMMM d, y");
     }
 
     static getDayOfWeek(date = new Date()) {
-        return format(date, "EEEE");
+        const timezone = WeatherManager.getLocationInfo().timezone;
+        return formatInTimeZone(date, timezone, "EEEE");
     }
 
     static getCurrentTime() {
-        return format(new Date(), "h:mm a");
+        const timezone = WeatherManager.getLocationInfo().timezone;
+        return formatInTimeZone(new Date(), timezone, "h:mm a");
     }
 
     static updateTime() {

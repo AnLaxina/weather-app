@@ -12,5 +12,6 @@ await WeatherManager.initialize("Maple Ridge, BC");
 await DOMManager.initialize();
 
 WeatherManager.logWeatherData();
-const dateforDay2 = WeatherManager.getWeekForecast()[2][0];
-console.log(`The date is: ${dateforDay2} and the day is: ${DateManager.getDayOfWeek(dateforDay2)}`);
+const dateforDay2 = WeatherManager.getWeekForecast()[1][0];
+console.log(dateforDay2);
+console.log(`The date: ${DateManager.getDate(dateforDay2)} \nAnd the day is: ${DateManager.getDayOfWeek(dateforDay2)}`);
