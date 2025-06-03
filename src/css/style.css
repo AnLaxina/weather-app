@@ -99,10 +99,6 @@ footer {
 }
 
 /* For the weather conditions section */
-#weather-icon {
-    width: 84px;
-    height: 84px;
-}
 
 #condition {
     font-size: 1.4rem;
