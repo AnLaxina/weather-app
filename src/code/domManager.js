@@ -6,6 +6,8 @@ export default class DOMManager {
         await this.#changeWeatherIcon();
         await this.#changeCondition();
         await this.#changeLocation();
+        this.#changeWind();
+        this.#changeHumidity();
         this.#changeTime();
         console.log("The DOM Manager has initialized!");
     }
@@ -21,6 +23,16 @@ export default class DOMManager {
         const temperature = await WeatherManager.getCurrentConditions().feelsLike;
         const description = await WeatherManager.getCurrentConditions().condition;
         condition.textContent = `${temperature}° (${description})`;
+    }
+
+    static #changeWind() {
+        const wind = document.getElementById("wind");
+        wind.textContent = WeatherManager.getCurrentConditions().wind.speed;
+    }
+
+    static #changeHumidity() {
+        const humidity = document.getElementById("humidity");
+        humidity.textContent = WeatherManager.getCurrentConditions().humidity;
     }
 
     static async #changeLocation() {
