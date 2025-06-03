@@ -9,6 +9,7 @@ export default class DOMManager {
         this.#changeWind();
         this.#changeHumidity();
         this.#changeTime();
+        this.#changeWeekForecastIcons();
         console.log("The DOM Manager has initialized!");
     }
 
@@ -44,5 +45,18 @@ export default class DOMManager {
     static #changeTime() {
         DateManager.updateTime();
         setInterval(() => DateManager.updateTime(), 1000);
+    }
+
+    static #changeWeekForecastIcons() {
+        const weekForecast = WeatherManager.getWeekForecast();
+        console.log(weekForecast);
+        // Get each weather card based on their id
+        for(let i = 1; i <= 7; i++) {
+            const weatherCard = document.querySelector(`div[data-weather-index="${i}"]`);
+            const img = weatherCard.querySelector("img");
+            const currentIcon = weekForecast[i][2];
+            console.log(i);
+            img.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/4th%20Set%20-%20Color/${currentIcon}.png`;
+        }
     }
 }
