@@ -8,7 +8,7 @@ import "./font/pretendard.css";
 import "./css/modal.css";
 import "./css/style.css";
 
-await WeatherManager.initialize("Maple Ridge, BC");
+await WeatherManager.initialize("Maple Ridge, Canada");
 await DOMManager.initialize();
 
 WeatherManager.logWeatherData();

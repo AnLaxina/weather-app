@@ -3,7 +3,7 @@ export default class APIManager {
     static async getWeatherInformation(location) {
         let dataJson;
         try {
-            const data = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=NJ5X7VJZ62AWQLWL5WCRJK7GV`);
+            const data = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=NJ5X7VJZ62AWQLWL5WCRJK7GV&unitGroup=metric`);
             dataJson = await data.json();
         }
         catch (error) {
