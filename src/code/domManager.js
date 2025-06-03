@@ -6,10 +6,12 @@ export default class DOMManager {
         await this.#changeWeatherIcon();
         await this.#changeCondition();
         await this.#changeLocation();
+
         this.#changeWind();
         this.#changeHumidity();
         this.#changeTime();
         this.#changeWeekForecastIcons();
+        this.#changeWeekForecastDesc();
         console.log("The DOM Manager has initialized!");
     }
 
@@ -49,14 +51,26 @@ export default class DOMManager {
 
     static #changeWeekForecastIcons() {
         const weekForecast = WeatherManager.getWeekForecast();
-        console.log(weekForecast);
         // Get each weather card based on their id
         for(let i = 1; i <= 7; i++) {
             const weatherCard = document.querySelector(`div[data-weather-index="${i}"]`);
             const img = weatherCard.querySelector("img");
             const currentIcon = weekForecast[i][2];
-            console.log(i);
             img.src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/4th%20Set%20-%20Color/${currentIcon}.png`;
+        }
+    }
+
+    static #changeWeekForecastDesc() {
+        const weekForecast = WeatherManager.getWeekForecast();
+        for(let i = 1; i <= 7; i++) {
+            const weatherCard = document.querySelector(`div[data-weather-index="${i}"]`);
+            const description = weatherCard.querySelector("p");
+
+            const currentDate = weekForecast[i][0];
+            const currentTemp = weekForecast[i][1];
+            const convertedDate = DateManager.getDayOfWeek(currentDate);
+
+            description.textContent = `${convertedDate} (${currentTemp}°)`;
         }
     }
 }

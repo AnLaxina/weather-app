@@ -14,7 +14,7 @@ export default class DateManager {
 
     static getDayOfWeek(date = new Date()) {
         const timezone = WeatherManager.getLocationInfo().timezone;
-        return formatInTimeZone(date, timezone, "EEEE");
+        return formatInTimeZone(date, timezone, "EEE");
     }
 
     static getCurrentTime() {
