@@ -12,6 +12,7 @@ export default class DOMManager {
         this.#changeTime();
         this.#changeWeekForecastIcons();
         this.#changeWeekForecastDesc();
+        this.#changeAlert();
         console.log("The DOM Manager has initialized!");
     }
 
@@ -71,6 +72,14 @@ export default class DOMManager {
             const convertedDate = DateManager.getDayOfWeek(currentDate);
 
             description.textContent = `${convertedDate} (${currentTemp}°)`;
+        }
+    }
+
+    static #changeAlert() {
+        const alert = document.getElementById("alert-type");
+        alert.textContent = WeatherManager.getAlerts().alerts;
+        if (alert.textContent !== "No alerts right now!") {
+            alert.style = "font-weight: bold";
         }
     }
 }

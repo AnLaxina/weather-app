@@ -56,7 +56,7 @@ export default class WeatherManager {
     // This function may be optional, usually.... alerts are kinda..... rare?
     static getAlerts() {
         return {
-            alerts: this.data.alerts.length > 1 ? this.data.alerts : "No alerts right now!"
+            alerts: this.data.alerts.length >= 1 ? this.data.alerts[0].event : "No alerts right now!"
         }
     }
 

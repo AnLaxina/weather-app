@@ -8,10 +8,7 @@ import "./font/pretendard.css";
 import "./css/modal.css";
 import "./css/style.css";
 
-await WeatherManager.initialize("Maple Ridge, Canada");
+await WeatherManager.initialize("Maple Ridge, BC");
 await DOMManager.initialize();
 
 WeatherManager.logWeatherData();
-const dateforDay2 = WeatherManager.getWeekForecast()[1][0];
-console.log(dateforDay2);
-console.log(`The date: ${DateManager.getDate(dateforDay2)} \nAnd the day is: ${DateManager.getDayOfWeek(dateforDay2)}`);
