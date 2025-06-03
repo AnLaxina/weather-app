@@ -1,7 +1,29 @@
 /* This is for the pop-up window that displays before everything else is loaded in */
 #location-popup:open {
-    display: flex;
     background-color: #7c5d87;
+    padding: 1.3rem;
+    min-width: 35vw;
+    min-height: 35vh;
     border-radius: 15px;
     border: #b88ab2 solid 5px;
+    color: #f2bfbf;
+    font-size: 1.2rem;
+    /* Centers the dialog */
+    margin: auto;
+}
+
+#location-popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+#location-popup::backdrop {
+    background-color: #40648b;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.1rem;
 }
