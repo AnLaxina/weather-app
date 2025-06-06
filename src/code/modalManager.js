@@ -1,3 +1,5 @@
+import APIManager from "./apiManager";
+
 export default class ModalManager {
     static modal;
 
@@ -6,6 +8,7 @@ export default class ModalManager {
         this.modal.showModal();
 
         this.#addEventListenersDone();
+        this.#addEventListenersLocation();
     }
 
     static #addEventListenersDone() {
@@ -14,6 +17,13 @@ export default class ModalManager {
             if (this.#checkValidInput()) {
                 this.modal.close();
             }
+        })
+    }
+
+    static #addEventListenersLocation() {
+        const locationButton = document.getElementById("location-button");
+        locationButton.addEventListener("click", () => {
+            APIManager.getUserLocation();
         })
     }
 

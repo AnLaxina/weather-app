@@ -12,4 +12,14 @@ export default class APIManager {
         
         return dataJson;
     }
+
+    static getUserLocation() {
+        navigator.geolocation.getCurrentPosition((pos) => {
+            const coords = pos.coords;
+            const latitude = coords.latitude;
+            const longitude = coords.longitude;
+
+            console.log(`Yeah, it's successful! Here are the coords:\nLatitude: ${latitude} Longitude: ${longitude}`);
+        })
+    }
 }
