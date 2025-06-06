@@ -23,7 +23,7 @@ export default class ModalManager {
     static #addEventListenersLocation() {
         const locationButton = document.getElementById("location-button");
         locationButton.addEventListener("click", () => {
-            APIManager.getUserLocation();
+            APIManager.getCurrentLocation();
         })
     }
 

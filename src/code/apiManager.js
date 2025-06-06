@@ -13,13 +13,20 @@ export default class APIManager {
         return dataJson;
     }
 
-    static getUserLocation() {
-        navigator.geolocation.getCurrentPosition((pos) => {
-            const coords = pos.coords;
-            const latitude = coords.latitude;
-            const longitude = coords.longitude;
+    static async getCurrentLocation() {
+        try {
+            const position = await this.getUserLocation();
+            const coords = position.coords;
+            console.log(`coords are: ${coords.latitude} : ${coords.longitude}`);
+        }
+        catch(error) {
+            alert(error.message);
+        }
+    }
 
-            console.log(`Yeah, it's successful! Here are the coords:\nLatitude: ${latitude} Longitude: ${longitude}`);
-        })
+    static getUserLocation() {
+        return new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
     }
 }
