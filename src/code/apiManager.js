@@ -17,11 +17,11 @@ export default class APIManager {
         // This code is essentially the same as getWeatherInformation(location) but it takes in the coordinates instead of a given location
         let dataJson;
         try {
-            const data = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${listOfCoords[0], listOfCoords[1]}/?key=NJ5X7VJZ62AWQLWL5WCRJK7GV&unitGroup=metric`);
+            const data = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${listOfCoords[0]}, ${listOfCoords[1]}/?key=NJ5X7VJZ62AWQLWL5WCRJK7GV&unitGroup=metric`);
             dataJson = await data.json();
         }
         catch (error) {
-            alert(`Uh oh! An error has occured: ${error}`);
+
         }
         
         return dataJson;

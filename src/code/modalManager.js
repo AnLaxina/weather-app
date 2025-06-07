@@ -21,7 +21,7 @@ export default class ModalManager {
                 this.modal.close();
                 const textInputValue = document.querySelector("input").value;
                 await WeatherManager.initializeLocation(textInputValue);
-                await  DOMManager.initialize();
+                await DOMManager.initialize();
             }
         })
     }
@@ -30,6 +30,13 @@ export default class ModalManager {
         const locationButton = document.getElementById("location-button");
         locationButton.addEventListener("click", async () => {
             const listOfCoords = await APIManager.getCurrentLocation();
+            await WeatherManager.initializeCoords(listOfCoords);
+            const dataJson = WeatherManager.data;
+            console.log(dataJson);
+            if(dataJson !== undefined) {
+                this.modal.close();
+                await DOMManager.initialize();
+            }
         })
     }
 
