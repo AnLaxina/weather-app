@@ -10,7 +10,3 @@ import "./css/modal.css";
 import "./css/style.css";
 
 ModalManager.initialize();
-await WeatherManager.initialize("Maple Ridge, BC");
-await DOMManager.initialize();
-
-WeatherManager.logWeatherData();

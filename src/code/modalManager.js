@@ -1,4 +1,6 @@
 import APIManager from "./apiManager";
+import WeatherManager from "./weatherManager";
+import DOMManager from "./domManager";
 
 export default class ModalManager {
     static modal;
@@ -13,17 +15,21 @@ export default class ModalManager {
 
     static #addEventListenersDone() {
         const doneButton = document.getElementById("done-button");
-        doneButton.addEventListener("click", () => {
+        
+        doneButton.addEventListener("click", async () => {
             if (this.#checkValidInput()) {
                 this.modal.close();
+                const textInputValue = document.querySelector("input").value;
+                await WeatherManager.initializeLocation(textInputValue);
+                await  DOMManager.initialize();
             }
         })
     }
 
     static #addEventListenersLocation() {
         const locationButton = document.getElementById("location-button");
-        locationButton.addEventListener("click", () => {
-            APIManager.getCurrentLocation();
+        locationButton.addEventListener("click", async () => {
+            const listOfCoords = await APIManager.getCurrentLocation();
         })
     }
 
