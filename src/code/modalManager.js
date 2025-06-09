@@ -11,6 +11,7 @@ export default class ModalManager {
 
         this.#addEventListenersDone();
         this.#addEventListenersLocation();
+        this.#preventEscClose();
     }
 
     static #addEventListenersDone() {
@@ -36,6 +37,14 @@ export default class ModalManager {
             if(dataJson !== undefined) {
                 this.modal.close();
                 await DOMManager.initialize();
+            }
+        })
+    }
+
+    static #preventEscClose() {
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && this.modal.open) {
+                e.preventDefault();
             }
         })
     }
