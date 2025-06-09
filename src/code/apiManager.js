@@ -7,7 +7,7 @@ export default class APIManager {
             dataJson = await data.json();
         }
         catch (error) {
-            alert(`Uh oh! An error has occured: ${error}`);
+            alert(`Try again! It's most likely an invalid location!`);
         }
         
         return dataJson;

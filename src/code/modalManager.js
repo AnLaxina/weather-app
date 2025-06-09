@@ -19,10 +19,12 @@ export default class ModalManager {
         
         doneButton.addEventListener("click", async () => {
             if (this.#checkValidInput()) {
-                this.modal.close();
                 const textInputValue = document.querySelector("input").value;
                 await WeatherManager.initializeLocation(textInputValue);
-                await DOMManager.initialize();
+                if (WeatherManager.data !== undefined) {
+                    this.modal.close();
+                    await DOMManager.initialize();
+                }
             }
         })
     }
@@ -34,7 +36,8 @@ export default class ModalManager {
             const geocodeString = await APIManager.reverseGeocode(listOfCoords);
             await WeatherManager.initializeLocation(geocodeString);
             const dataJson = WeatherManager.data;
-            if(dataJson !== undefined) {
+            
+            if(dataJson !== undefined && geocodeString !== undefined) {
                 this.modal.close();
                 await DOMManager.initialize();
             }
