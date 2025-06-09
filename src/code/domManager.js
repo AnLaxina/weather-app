@@ -13,7 +13,6 @@ export default class DOMManager {
         this.#changeWeekForecastIcons();
         this.#changeWeekForecastDesc();
         this.#changeAlert();
-        console.log("The DOM Manager has initialized!");
     }
 
     static async #changeWeatherIcon() {
@@ -77,7 +76,15 @@ export default class DOMManager {
 
     static #changeAlert() {
         const alert = document.getElementById("alert-type");
-        alert.textContent = WeatherManager.getAlerts().alerts;
+        const alerts = WeatherManager.getAlerts().alerts;
+        // All this does is get anything after the "What:" in the data and anything before any punctuation (inclusive).
+        // This makes it so that the user can see what the alert actually is rather than just showing "alert"
+        const match = alerts.match(/What:\s*([^\.]+\.)/);
+        
+        if (match) { 
+            const summary = match[1].trim();
+            alert.textContent = summary;
+        }
         if (alert.textContent !== "No alerts right now!") {
             alert.style = "font-weight: bold";
         }

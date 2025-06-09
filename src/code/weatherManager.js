@@ -7,7 +7,7 @@ export default class WeatherManager {
     // API Key: NJ5X7VJZ62AWQLWL5WCRJK7GV
     static async initializeLocation(location) {
         // For now, let's just test out the API and see if everything is working.
-        this.data = await APIManager.getWeatherInformation(location)
+        this.data = await APIManager.getWeatherInformation(location);
     }
 
     static async initializeCoords(listOfCoords) {
@@ -60,7 +60,7 @@ export default class WeatherManager {
     // This function may be optional, usually.... alerts are kinda..... rare?
     static getAlerts() {
         return {
-            alerts: this.data.alerts.length >= 1 ? this.data.alerts[0].event : "No alerts right now!"
+            alerts: this.data.alerts.length >= 1 ? this.data.alerts[0].description : "No alerts right now!"
         }
     }
 

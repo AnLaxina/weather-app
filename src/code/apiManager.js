@@ -31,7 +31,6 @@ export default class APIManager {
         try {
             const position = await this.getUserLocation();
             const coords = position.coords;
-            console.log(`coords are: ${coords.latitude} : ${coords.longitude}`);
             return [coords.latitude, coords.longitude];
         }
         catch(error) {
