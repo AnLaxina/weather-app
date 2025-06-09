@@ -12,6 +12,7 @@ export default class ModalManager {
         this.#addEventListenersDone();
         this.#addEventListenersLocation();
         this.#preventEscClose();
+        this.#addEnterInput();
     }
 
     static #addEventListenersDone() {
@@ -36,7 +37,7 @@ export default class ModalManager {
             const geocodeString = await APIManager.reverseGeocode(listOfCoords);
             await WeatherManager.initializeLocation(geocodeString);
             const dataJson = WeatherManager.data;
-            
+
             if(dataJson !== undefined && geocodeString !== undefined) {
                 this.modal.close();
                 await DOMManager.initialize();
@@ -48,6 +49,20 @@ export default class ModalManager {
         window.addEventListener("keydown", (e) => {
             if (e.key === "Escape" && this.modal.open) {
                 e.preventDefault();
+            }
+        })
+    }
+
+    // This allows the user to hit the enter key as opposed to the "Done" button for more flexibility
+    static #addEnterInput() {
+        window.addEventListener("keypress", async (e) => {
+            if(e.key === "Enter" && this.#checkValidInput()) {
+                const textInputValue = document.querySelector("input").value;
+                await WeatherManager.initializeLocation(textInputValue);
+                if (WeatherManager.data !== undefined) {
+                    this.modal.close();
+                    await DOMManager.initialize();
+                }
             }
         })
     }
