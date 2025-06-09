@@ -49,10 +49,14 @@ export default class APIManager {
         try {
             const data = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${listOfCoords[0]}&lon=${listOfCoords[1]}`);
             const dataJson = await data.json();
-            return dataJson;
+            return this.getGeocodeName(dataJson);
         }
         catch (error) {
             console.log(`Couldn't reverse geocode! Because the error is: ${error}`);
         }
+    }
+
+    static getGeocodeName(dataJson) {
+        return `${dataJson.address.city}, ${dataJson.address.country}`;
     }
 }
