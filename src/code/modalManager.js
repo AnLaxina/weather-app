@@ -12,6 +12,7 @@ export default class ModalManager {
         this.#addEventListenersDone();
         this.#addEventListenersLocation();
         this.#preventEscClose();
+        this.#preventInputEnter();
         this.#addEnterInput();
     }
 
@@ -66,6 +67,15 @@ export default class ModalManager {
             }
         })
     }
+
+    static #preventInputEnter() {
+        const form = document.querySelector("form");
+        if (form) {
+            form.addEventListener("submit", (e) => {
+            e.preventDefault();
+        });
+    }
+}
 
     static #checkValidInput() {
         const textInput = document.querySelector("input");
