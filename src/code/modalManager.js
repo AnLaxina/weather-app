@@ -31,8 +31,10 @@ export default class ModalManager {
         locationButton.addEventListener("click", async () => {
             const listOfCoords = await APIManager.getCurrentLocation();
             await WeatherManager.initializeCoords(listOfCoords);
+            const geocodeData = await APIManager.reverseGeocode(listOfCoords);
             const dataJson = WeatherManager.data;
-            console.log(dataJson);
+            console.log(geocodeData);
+            
             if(dataJson !== undefined) {
                 this.modal.close();
                 await DOMManager.initialize();

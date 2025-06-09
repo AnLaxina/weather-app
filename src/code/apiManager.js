@@ -44,4 +44,15 @@ export default class APIManager {
             navigator.geolocation.getCurrentPosition(resolve, reject);
         });
     }
+
+    static async reverseGeocode(listOfCoords) {
+        try {
+            const data = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${listOfCoords[0]}&lon=${listOfCoords[1]}`);
+            const dataJson = await data.json();
+            return dataJson;
+        }
+        catch (error) {
+            console.log(`Couldn't reverse geocode! Because the error is: ${error}`);
+        }
+    }
 }
