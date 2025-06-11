@@ -13,8 +13,8 @@ A weather application that gets real-time data using the Visual Crossing Weather
 
 ## 🛠️ Tools Used
 
-- **JavaScript (ES6+)**
-- **HTML5 + CSS3**
+- **JavaScript**
+- **HTML + CSS**
 - **Visual Crossing Weather API**
 - **OpenStreetMap (Nominatim Reverse Geocoding)**
 - **date-fns-tz** (for timezone handling and clean formatting)
@@ -37,4 +37,5 @@ I simply wanted to use an application in my day-to-day life where I could check 
   - Clicking "Use Current Location" takes a while to load, and it doesn't actually have any live feedback or loading screen
   
 ## 🖼️ Screenshots
-**To be added soon**
+![Screenshot of the main app](screenshots/main-screenshot.png)
+![Screenshot of the pop-up window when the page loads](screenshots/popup-screenshot.png)
