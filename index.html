@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weathery</title>
+    <link rel="icon" type="image/svg+xml" href="cloud.svg">
+  <script type="module" crossorigin src="/weather-app/assets/index-C-gxdJWE.js"></script>
+  <link rel="stylesheet" crossorigin href="/weather-app/assets/index-CGMAS6yh.css">
+</head>
+
+<body>
+    <header>
+        <h1>☁️ Welcome to Weathery</h1>
+    </header>
+    <main>
+        <section class="location-info">
+            <h3 id="city">City Name</h3>
+            <h3 id="time">Friday, 12:00 PM</h3>
+        </section>
+        <section class="current-weather">
+            <div class="weather-information">
+                <img src="" alt="An icon of the weather" id="weather-icon">
+                <p id="condition">62.7&deg;C (Feels like hell)</p>
+            </div>
+            <div class="humidity-information">
+                <p>💨 Wind: <span id="wind">5</span> km/hr</p>
+                <p>💧 Humidity: <span id="humidity">56</span>%</p>
+            </div>
+        </section>
+        <h3 id="forecast-title">7 Day Forecast</h3>
+        <section class="day-forecast">
+            <div class="day-of-week" data-weather-index=1>
+                <img src="" alt="An icon of the weather">
+                <p>Fri 65&deg;C</p>
+            </div>
+            <div class="day-of-week" data-weather-index=2>
+                <img src="" alt="An icon of the weather">
+                <p>Sat 65&deg;C</p>
+            </div>
+            <div class="day-of-week" data-weather-index=3>
+                <img src="" alt="An icon of the weather">
+                <p>Sun 65&deg;C</p>
+            </div>
+            <div class="day-of-week" data-weather-index=4>
+                <img src="" alt="An icon of the weather">
+                <p>Mon 65&deg;C</p>
+            </div>
+            <div class="day-of-week" data-weather-index=5>
+                <img src="" alt="An icon of the weather">
+                <p>Tues 65&deg;C</p>
+            </div>
+            <div class="day-of-week" data-weather-index=6>
+                <img src="" alt="An icon of the weather">
+                <p>Wed 65&deg;C</p>
+            </div>
+            <div class="day-of-week" data-weather-index=7>
+                <img src="" alt="An icon of the weather">
+                <p>Thurs 65&deg;C</p>
+            </div>
+
+        </section>
+        <section class="weather-alert">
+            <p>Alerts: <span id="alert-type">None</span></p>
+        </section>
+    </main>
+    <footer>
+        <p>2025 AnLaxina</p>
+    </footer>
+    <!-- Modal/Pop-up for entering location -->
+    <dialog id="location-popup">
+        <form action="#" method="post">
+            <label for="city-name">City Name: </label>
+            <input type="text" placeholder="ex. Vancouver, BC" id="city-name" required>
+
+            <div class="popup-buttons">
+                <button type="button" id="done-button">Done</button>
+                <button type="button" id="location-button">Use Current Location</button>
+            </div>
+
+        </form>
+    </dialog>
+</body>
+
+</html>
